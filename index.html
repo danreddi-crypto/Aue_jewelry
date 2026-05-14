@@ -20,8 +20,9 @@
             scroll-behavior: smooth;
         }
 
+        /* RESPONSIVE HEADER */
         header {
-            padding: 20px 50px;
+            padding: 15px 5%;
             background: #fff;
             border-bottom: 1px solid #eee;
             position: sticky;
@@ -33,11 +34,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap; /* Allows menu to wrap on very small screens */
         }
 
         .logo {
             font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             letter-spacing: 3px;
             font-weight: bold;
         }
@@ -49,18 +51,20 @@
             padding: 0;
         }
 
-        nav ul li { margin-left: 30px; }
+        nav ul li { margin-left: 20px; }
 
         nav ul li a {
             text-decoration: none;
             color: #333;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 1px;
         }
 
+        /* RESPONSIVE HERO */
         .hero {
-            height: 70vh;
+            height: 60vh;
+            min-height: 400px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -71,42 +75,42 @@
             background-size: cover;
             background-position: center;
             color: white;
+            padding: 0 20px;
         }
 
         .hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 8vw, 3.5rem); /* Dynamically scales font size */
             margin-bottom: 10px;
         }
 
-        .section-padding { padding: 80px 10%; text-align: center; }
+        .section-padding { padding: 60px 5%; text-align: center; }
 
         .instagram-section h2, .contact-section h2 {
             font-family: 'Cinzel', serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 5px;
         }
 
-        /* Adjusted feed grid to allow Elfsight to take full width */
         .feed-container {
-            margin-top: 40px;
+            margin-top: 30px;
             width: 100%;
         }
 
-        /* CONTACT FORM STYLES */
+        /* CONTACT FORM ADJUSTMENTS */
         .contact-section { background-color: #fff; }
 
         .contact-container {
             max-width: 600px;
-            margin: 40px auto 0;
+            margin: 30px auto 0;
             text-align: left;
         }
 
-        .form-group { margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
 
         label {
             display: block;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             margin-bottom: 5px;
             letter-spacing: 1px;
@@ -123,7 +127,7 @@
         .submit-btn {
             background: #333;
             color: #fff;
-            padding: 15px 40px;
+            padding: 15px;
             border: none;
             text-transform: uppercase;
             cursor: pointer;
@@ -132,32 +136,40 @@
             width: 100%;
         }
 
-        .submit-btn:hover { background: #555; }
-
         .btn {
-            margin-top: 25px;
-            padding: 12px 35px;
+            margin-top: 20px;
+            padding: 12px 30px;
             background: transparent;
             border: 1px solid white;
             color: white;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             transition: 0.3s;
             display: inline-block;
         }
 
-        .btn:hover { background: white; color: #333; }
+        /* --- MEDIA QUERIES FOR MOBILE --- */
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            
+            nav { flex-direction: column; gap: 10px; }
+            
+            nav ul li { margin: 0 10px; }
+            
+            .section-padding { padding: 40px 20px; }
+
+            .hero { height: 50vh; }
+        }
 
         footer {
-            padding: 40px;
+            padding: 30px;
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             background: #f9f7f2;
             border-top: 1px solid #eee;
             color: #888;
         }
-        /* --- INTERNAL CSS END --- */
     </style>
 </head>
 <body>
@@ -175,7 +187,7 @@
 
     <section class="hero">
         <h1>Handcrafted Artistry</h1>
-        <p>Unique wire-wrapped and wooden jewelry for the modern soul.</p>
+        <p>Unique jewelry for the modern soul.</p>
         <a href="#gallery" class="btn">Explore Work</a>
     </section>
 
@@ -213,7 +225,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Wire & Wood Jewelry. Designed for Elegance.</p>
+        <p>&copy; 2026 Wire & Wood Jewelry. Designed for Elegance.</p>
     </footer>
 
 </body>
