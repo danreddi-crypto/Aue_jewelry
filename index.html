@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wire & Wood Jewelry | Handcrafted Elegance</title>
+    <title>Wirewood | Handcrafted Natural Stone Jewelry</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
     <style>
         /* --- INTERNAL CSS START --- */
@@ -14,17 +14,16 @@
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            color: #333;
-            background-color: #f9f7f2;
+            color: #fff; 
+            background-color: #1a2e26; /* Pine Green */
             line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        /* RESPONSIVE HEADER */
         header {
             padding: 15px 5%;
-            background: #fff;
-            border-bottom: 1px solid #eee;
+            background: #13221c; 
+            border-bottom: 1px solid #2d443a;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -34,14 +33,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap; /* Allows menu to wrap on very small screens */
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
         }
 
         .logo {
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-            font-weight: bold;
+            font-family: 'Great Vibes', cursive; 
+            font-size: 2.2rem;
+            color: #e0c097; 
+        }
+
+        .tagline {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a3b8ae;
+            margin-top: 5px;
         }
 
         nav ul {
@@ -55,13 +67,15 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #333;
+            color: #fff;
             text-transform: uppercase;
             font-size: 0.75rem;
             letter-spacing: 1px;
+            transition: 0.3s;
         }
 
-        /* RESPONSIVE HERO */
+        nav ul li a:hover { color: #e0c097; }
+
         .hero {
             height: 60vh;
             min-height: 400px;
@@ -70,7 +84,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+            background: linear-gradient(rgba(26, 46, 38, 0.7), rgba(26, 46, 38, 0.7)), 
                         url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
@@ -79,69 +93,64 @@
         }
 
         .hero h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 8vw, 3.5rem); /* Dynamically scales font size */
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3rem, 10vw, 5rem);
             margin-bottom: 10px;
+            color: #e0c097;
         }
 
-        .section-padding { padding: 60px 5%; text-align: center; }
+        .section-padding { padding: 80px 5%; text-align: center; }
 
-        .instagram-section h2, .contact-section h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            margin-bottom: 5px;
+        h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #e0c097;
         }
 
-        .feed-container {
-            margin-top: 30px;
-            width: 100%;
+        .contact-section { 
+            background-color: #1e352b; 
         }
 
-        /* CONTACT FORM ADJUSTMENTS */
-        .contact-section { background-color: #fff; }
-
-        .contact-container {
-            max-width: 600px;
-            margin: 30px auto 0;
-            text-align: left;
+        .contact-info-container {
+            max-width: 500px;
+            margin: 40px auto 0;
+            padding: 30px;
+            border: 1px solid #2d443a;
+            background: #13221c;
+            border-radius: 4px;
         }
 
-        .form-group { margin-bottom: 15px; }
-
-        label {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
+        .contact-info-container p {
+            font-size: 1.1rem;
+            margin: 15px 0;
         }
 
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            background: #fdfdfd;
-            font-family: inherit;
-        }
-
-        .submit-btn {
-            background: #333;
-            color: #fff;
-            padding: 15px;
-            border: none;
-            text-transform: uppercase;
-            cursor: pointer;
-            letter-spacing: 2px;
+        .contact-info-container a {
+            color: #e0c097;
+            text-decoration: none;
             transition: 0.3s;
-            width: 100%;
+        }
+
+        .contact-info-container a:hover {
+            color: #fff;
+        }
+
+        .info-label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a3b8ae;
+            margin-bottom: 5px;
         }
 
         .btn {
             margin-top: 20px;
             padding: 12px 30px;
             background: transparent;
-            border: 1px solid white;
-            color: white;
+            border: 1px solid #e0c097;
+            color: #e0c097;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 0.8rem;
@@ -149,26 +158,21 @@
             display: inline-block;
         }
 
-        /* --- MEDIA QUERIES FOR MOBILE --- */
-        @media (max-width: 768px) {
-            header { padding: 15px 20px; }
-            
-            nav { flex-direction: column; gap: 10px; }
-            
-            nav ul li { margin: 0 10px; }
-            
-            .section-padding { padding: 40px 20px; }
+        .btn:hover { background: #e0c097; color: #1a2e26; }
 
-            .hero { height: 50vh; }
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; }
+            nav ul li { margin: 0 10px; }
+            .hero h1 { font-size: 3.5rem; }
         }
 
         footer {
-            padding: 30px;
+            padding: 40px;
             text-align: center;
             font-size: 0.75rem;
-            background: #f9f7f2;
-            border-top: 1px solid #eee;
-            color: #888;
+            background: #13221c;
+            border-top: 1px solid #2d443a;
+            color: #a3b8ae;
         }
     </style>
 </head>
@@ -176,7 +180,10 @@
 
     <header>
         <nav>
-            <div class="logo">WIRE & WOOD</div>
+            <div class="logo-container">
+                <div class="logo">Wirewood</div>
+                <div class="tagline">Handcrafted Natural Stone Jewelry</div>
+            </div>
             <ul>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -187,11 +194,11 @@
 
     <section class="hero">
         <h1>Handcrafted Artistry</h1>
-        <p>Unique jewelry for the modern soul.</p>
-        <a href="#gallery" class="btn">Explore Work</a>
+        <p>Unique handcrafted jewelry.</p>
+        <a href="#gallery" class="btn">Gallery</a>
     </section>
 
-    <section id="gallery" class="section-padding instagram-section">
+    <section id="gallery" class="section-padding">
         <h2>From the Studio</h2>
         <p>Follow @wirewoodjewelry for the latest creations</p>
         
@@ -203,29 +210,26 @@
 
     <section id="contact" class="section-padding contact-section">
         <h2>Inquire</h2>
-        <p>Interested in a custom piece? Send a message below.</p>
+        <p>Interested in a custom piece, color or stone? Reach out to us:</p>
         
-        <div class="contact-container">
-            <form action="https://formspree.io/f/dan.reddi@icloud.com" method="POST">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+        <div class="contact-info-container">
+            <div>
+                <span class="info-label">Cell</span>
+                <p><a href="tel:2105350779">(210) 535-0779</a></p>
+            </div>
+            <div>
+                <span class="info-label">Email</span>
+                <p><a href="mailto:wirewood@live.com">wirewood@live.com</a></p>
+            </div>
+            <div>
+                <span class="info-label">Instagram</span>
+                <p><a href="https://www.instagram.com/wirewoodjewelry/" target="_blank">@wirewoodjewelry</a></p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Wire & Wood Jewelry. Designed for Elegance.</p>
+        <p>&copy; 2026 Wirewood Jewelry. Designed for Elegance.</p>
     </footer>
 
 </body>
