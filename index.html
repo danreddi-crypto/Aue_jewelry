@@ -78,7 +78,7 @@
 
         nav ul li a:hover { color: #e0c097; }
 
-        /* FIXED RESPONSIVE HERO BANNER */
+        /* FIXED RESPONSIVE HERO BANNER WITH DYNAMIC MEDIA QUERIES */
         .hero {
             position: relative;
             height: auto;
@@ -106,15 +106,16 @@
             z-index: 1;
         }
 
-        /* Forces the full, uncropped image to remain 100% visible on all devices */
+        /* Desktop view: default sizing using content asset container rules */
         .hero-bg-img {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Prevents cropping, fits entire image inside the box */
+            object-fit: contain;
             z-index: 2;
+            content: url('https://drive.google.com/thumbnail?id=1RWjLyNE-5fI1T0cabP0_mCwxO0EBTdc6&sz=w1920');
         }
 
         /* Overlay to protect text legibility */
@@ -291,12 +292,17 @@
             transform: translateY(-4px);
         }
 
-        /* ADAPTIVE LAYOUT UPDATES FOR PHONES / TABLETS */
+        /* ADAPTIVE LAYOUT FOR MOBILE CELL PHONES & TABLETS */
         @media (max-width: 768px) {
             nav { flex-direction: column; gap: 15px; }
             nav ul li { margin: 0 10px; }
             .hero { height: 55vh; min-height: 380px; padding: 20px; }
             .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+            
+            /* SWAPS TO MOBILE IMAGE VIA CONTENT INJECTION WORKAROUND */
+            .hero-bg-img {
+                content: url('https://drive.google.com/thumbnail?id=1i1kuWoDIRfILZhg8fjVqi-602WLtjuxd&sz=w1000');
+            }
         }
         
         @media (min-width: 1200px) {
@@ -332,8 +338,8 @@
     </header>
 
     <section class="hero">
-        <img class="hero-bg-blur" src="https://drive.google.com/thumbnail?id=1SvRmkBuGwq-7PxlubedTNuqpCEmjLI6e&sz=w100" alt="">
-        <img class="hero-bg-img" src="https://drive.google.com/thumbnail?id=1SvRmkBuGwq-7PxlubedTNuqpCEmjLI6e&sz=w1920" alt="Wirewood Banner Showcase">
+        <img class="hero-bg-blur" src="https://drive.google.com/thumbnail?id=1RWjLyNE-5fI1T0cabP0_mCwxO0EBTdc6&sz=w100" alt="">
+        <img class="hero-bg-img" alt="Wirewood Banner Showcase">
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
