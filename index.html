@@ -78,7 +78,7 @@
 
         nav ul li a:hover { color: #e0c097; }
 
-        /* FIXED RESPONSIVE HERO BANNER WITH DYNAMIC MEDIA QUERIES */
+        /* FIXED RESPONSIVE HERO BANNER */
         .hero {
             position: relative;
             height: auto;
@@ -292,9 +292,18 @@
             transform: translateY(-4px);
         }
 
-        /* ADAPTIVE LAYOUT FOR MOBILE CELL PHONES & TABLETS */
+        /* ADAPTIVE LAYOUT UPDATES FOR PHONES / TABLETS */
         @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 15px; }
+            /* UPDATED: Centers the entire logo block and centers menu navigation layout items on phones */
+            nav { 
+                flex-direction: column; 
+                gap: 15px; 
+                text-align: center;
+                align-items: center;
+            }
+            .logo-container {
+                align-items: center;
+            }
             nav ul li { margin: 0 10px; }
             .hero { height: 55vh; min-height: 380px; padding: 20px; }
             .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
