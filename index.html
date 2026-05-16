@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wirewood | Handcrafted Natural Stone Jewelry</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         /* --- INTERNAL CSS START --- */
@@ -15,15 +15,15 @@
             margin: 0;
             font-family: 'Montserrat', sans-serif;
             color: #fff; 
-            background-color: #1a2e26; /* Pine Green */
+            background-color: #224231; /* Forest Green */
             line-height: 1.6;
             scroll-behavior: smooth;
         }
 
         header {
             padding: 15px 5%;
-            background: #13221c; 
-            border-bottom: 1px solid #2d443a;
+            background: #172d21; 
+            border-bottom: 1px solid #325844;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -42,17 +42,19 @@
             line-height: 1;
         }
 
+        /* Primary font set to Lynda Cursive with Fallbacks */
         .logo {
-            font-family: 'Great Vibes', cursive; 
-            font-size: 2.2rem;
+            font-family: 'Lynda Cursive', 'Dancing Script', 'Lucida Handwriting', cursive; 
+            font-size: 2.4rem;
             color: #e0c097; 
+            font-weight: 700;
         }
 
         .tagline {
             font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #a3b8ae;
+            color: #b0c2b9;
             margin-top: 5px;
         }
 
@@ -76,48 +78,148 @@
 
         nav ul li a:hover { color: #e0c097; }
 
+        /* FIXED RESPONSIVE HERO BANNER */
         .hero {
-            height: 60vh;
+            position: relative;
+            height: auto;
             min-height: 400px;
+            padding: 60px 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(26, 46, 38, 0.7), rgba(26, 46, 38, 0.7)), 
-                        url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=2000');
-            background-size: cover;
-            background-position: center;
+            overflow: hidden;
             color: white;
-            padding: 0 20px;
+            background-color: #13251c; /* Deep dark backing for image borders */
+        }
+
+        /* Blurred background effect to fill out wider screens nicely */
+        .hero-bg-blur {
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            object-fit: cover;
+            filter: blur(20px) brightness(0.3);
+            z-index: 1;
+        }
+
+        /* Forces the full, uncropped image to remain 100% visible on all devices */
+        .hero-bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Prevents cropping, fits entire image inside the box */
+            z-index: 2;
+        }
+
+        /* Overlay to protect text legibility */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(19, 37, 28, 0.35); /* Subtle dark tint over the image center */
+            z-index: 3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            max-width: 600px;
         }
 
         .hero h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: clamp(3rem, 10vw, 5rem);
+            font-family: 'Lynda Cursive', 'Dancing Script', 'Lucida Handwriting', cursive;
+            font-size: clamp(2.5rem, 6vw, 4rem);
             margin-bottom: 10px;
             color: #e0c097;
+            font-weight: 700;
+            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9), 0 0 20px rgba(23, 45, 33, 0.8); 
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.9);
+            margin-bottom: 20px;
         }
 
         .section-padding { padding: 80px 5%; text-align: center; }
 
         h2 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.5rem;
+            font-family: 'Lynda Cursive', 'Dancing Script', 'Lucida Handwriting', cursive;
+            font-size: 2.8rem;
             margin-bottom: 10px;
             color: #e0c097;
         }
 
+        /* --- THE METAL & THE ARTIST SECTION LAYOUTS --- */
+        .alt-section {
+            background-color: #1b3527;
+        }
+
+        .info-grid {
+            display: flex;
+            grid-gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+
+        .info-card {
+            background: #172d21;
+            border: 1px solid #3a674f;
+            padding: 30px;
+            border-radius: 4px;
+            flex: 1;
+            min-width: 280px;
+            max-width: 480px;
+            text-align: left;
+        }
+
+        .info-card h3 {
+            color: #e0c097;
+            margin-top: 0;
+            font-size: 1.3rem;
+            border-bottom: 1px solid #325844;
+            padding-bottom: 10px;
+        }
+
+        .bio-text {
+            max-width: 800px;
+            margin: 30px auto 0;
+            text-align: left;
+            background: #172d21;
+            border: 1px solid #3a674f;
+            padding: 40px;
+            border-radius: 4px;
+        }
+
+        .bio-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .bio-text p:last-child {
+            margin-bottom: 0;
+        }
+
         .contact-section { 
-            background-color: #1e352b; 
+            background-color: #284c39; 
         }
 
         .contact-info-container {
             max-width: 500px;
             margin: 40px auto 0;
             padding: 30px;
-            border: 1px solid #2d443a;
-            background: #13221c;
+            border: 1px solid #3a674f;
+            background: #172d21;
             border-radius: 4px;
         }
 
@@ -141,42 +243,77 @@
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #a3b8ae;
+            color: #b0c2b9;
             margin-bottom: 5px;
         }
 
         .btn {
-            margin-top: 20px;
             padding: 12px 30px;
-            background: transparent;
-            border: 1px solid #e0c097;
-            color: #e0c097;
+            background: #e0c097;
+            color: #172d21;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 0.8rem;
+            font-weight: 600;
             transition: 0.3s;
             display: inline-block;
+            border: 1px solid #e0c097;
+            border-radius: 4px;
         }
 
-        .btn:hover { background: #e0c097; color: #1a2e26; }
+        .btn:hover { background: transparent; color: #e0c097; }
 
+        /* FIXED BACK TO TOP BUTTON */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #e0c097;
+            color: #172d21;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: 0.3s ease;
+            z-index: 2000;
+            border: 1px solid #e0c097;
+        }
+
+        .back-to-top:hover {
+            background: #172d21;
+            color: #e0c097;
+            transform: translateY(-4px);
+        }
+
+        /* ADAPTIVE LAYOUT UPDATES FOR PHONES / TABLETS */
         @media (max-width: 768px) {
             nav { flex-direction: column; gap: 15px; }
             nav ul li { margin: 0 10px; }
-            .hero h1 { font-size: 3.5rem; }
+            .hero { height: 55vh; min-height: 380px; padding: 20px; }
+            .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+        }
+        
+        @media (min-width: 1200px) {
+            .hero { height: 55vh; } /* Stabilizes desktop proportions perfectly */
         }
 
         footer {
             padding: 40px;
             text-align: center;
             font-size: 0.75rem;
-            background: #13221c;
-            border-top: 1px solid #2d443a;
-            color: #a3b8ae;
+            background: #172d21;
+            border-top: 1px solid #325844;
+            color: #b0c2b9;
         }
     </style>
 </head>
-<body>
+<body id="top">
 
     <header>
         <nav>
@@ -185,7 +322,9 @@
                 <div class="tagline">Handcrafted Natural Stone Jewelry</div>
             </div>
             <ul>
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#gallery">The Gallery</a></li>
+                <li><a href="#metal">The Metal</a></li>
+                <li><a href="#artist">The Artist</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="https://www.instagram.com/wirewoodjewelry/" target="_blank">Instagram</a></li>
             </ul>
@@ -193,9 +332,15 @@
     </header>
 
     <section class="hero">
-        <h1>Handcrafted Artistry</h1>
-        <p>Unique handcrafted jewelry.</p>
-        <a href="#gallery" class="btn">Gallery</a>
+        <img class="hero-bg-blur" src="https://drive.google.com/thumbnail?id=1SvRmkBuGwq-7PxlubedTNuqpCEmjLI6e&sz=w100" alt="">
+        <img class="hero-bg-img" src="https://drive.google.com/thumbnail?id=1SvRmkBuGwq-7PxlubedTNuqpCEmjLI6e&sz=w1920" alt="Wirewood Banner Showcase">
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1>Handcrafted Artistry</h1>
+            <p>Unique handcrafted jewelry.</p>
+            <a href="#gallery" class="btn">The Gallery</a>
+        </div>
     </section>
 
     <section id="gallery" class="section-padding">
@@ -208,9 +353,41 @@
         </div>
     </section>
 
+    <section id="metal" class="section-padding alt-section">
+        <h2>The Metal</h2>
+        <p>Quality materials made to last a lifetime.</p>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>14k Gold-Filled</h3>
+                <p>This is the materials that used to be called "rolled gold" - a much less confusing term! This wire is made by rolling a layer of 14k gold around a base material, usually jeweler's brass.</p>
+                <p>The layer of gold in 14/20 gold-filled wire is about 100 times thicker than gold plate. It is a lifetime product for most people. Since everything touching your skin is 14k gold, only people with extreme sensitivity generally have any allergic reactions to this metal, unlike gold-plate.</p>
+                <p><em>*Red Gold-filled wire and solid 14k Gold are available upon request (Sorry - no White Gold-filled).</em></p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Argentium Silver</h3>
+                <p>The wire is solid Argentium Silver, not layered. This is a type of Sterling Silver using the metal Germanium instead of Copper.</p>
+                <p>It has the same amount of silver in the mix (the .925 we all know to ask for), but because of the Germanium, it resists tarnishing. All of our pendants, bracelets and rings are now made with this type of 925 silver.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="artist" class="section-padding">
+        <h2>The Artist</h2>
+        <p>The story behind our handcrafted creations.</p>
+        
+        <div class="bio-text">
+            <p>Wirewood was established by Randy & Sandy Aue. He was born and raised in Colorado, while she is a native Texan. Randy has always been adept with his hands; he worked at repair and maintenance work of all kinds through the years, but his personal hobbies always involved exploring the creation all around us with Sandy right beside him every step of the way.</p>
+            <p>They raised canaries, tropical fish and African violets, studied the stars through telescopes, and photographed everything around them. They designed landscapes, cultivated gardens, and even made a few pieces of furniture. But always, throughout everything else, they loved looking for beautiful rocks—especially petrified wood.</p>
+            <p>Their collection at home became quite extensive, and they realized they would have to find a way to do something with all these rocks. Eventually, that led to Randy teaching himself the skills of the lapidary (someone who cuts and polishes precious stones).</p>
+            <p>A short time after that, he read an article in a magazine that demonstrated the technique of jewelry making known as wire wrapping. The outcome of that is the business that came to be known as Wirewood—a name derived from the way they would make copper wire trees and mount them on pieces of petrified wood.</p>
+        </div>
+    </section>
+
     <section id="contact" class="section-padding contact-section">
         <h2>Inquire</h2>
-        <p>Interested in a custom piece, color or stone? Reach out to us:</p>
+        <p>Interested in a custom order, certain stone or special color? Reach out to us:</p>
         
         <div class="contact-info-container">
             <div>
@@ -227,6 +404,8 @@
             </div>
         </div>
     </section>
+
+    <a href="#top" class="back-to-top" title="Back to Top">▲</a>
 
     <footer>
         <p>&copy; 2026 Wirewood Jewelry. Designed for Elegance.</p>
