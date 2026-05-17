@@ -78,12 +78,12 @@
 
         nav ul li a:hover { color: #e0c097; }
 
-        /* RESPONSIVE HERO BANNER WITH VERTICAL SPACING */
+        /* RESPONSIVE HERO BANNER WITH OPTIMIZED VERTICAL SPACING */
         .hero {
             position: relative;
             height: auto;
             min-height: 400px;
-            padding: 40px 20px 80px; 
+            padding: 20px 20px 100px; /* Reduced top padding and extended bottom gap to pull content up */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -129,12 +129,12 @@
             z-index: 3;
         }
 
-        /* Minor negative margin shift to pull the main message area upward */
+        /* UPDATED: Shifted up by an additional ~2 lines of spacing (-75px total) */
         .hero-content {
             position: relative;
             z-index: 4;
             max-width: 800px;
-            margin-top: -30px; 
+            margin-top: -75px; 
         }
 
         .hero h1 {
@@ -301,8 +301,9 @@
                 align-items: center;
             }
             nav ul li { margin: 0 10px; }
-            .hero { height: 55vh; min-height: 380px; padding: 20px 20px 40px; }
-            .hero-content { margin-top: -15px; }
+            .hero { height: 55vh; min-height: 380px; padding: 10px 20px 50px; }
+            /* UPDATED: Adjusted mobile offset layout proportionally */
+            .hero-content { margin-top: -45px; }
             .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
             
             /* SWAPS TO MOBILE IMAGE VIA CONTENT INJECTION WORKAROUND */
