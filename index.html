@@ -83,7 +83,7 @@
             position: relative;
             height: auto;
             min-height: 400px;
-            padding: 20px 20px 100px; /* Reduced top padding and extended bottom gap to pull content up */
+            padding: 20px 20px 100px; 
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -129,18 +129,18 @@
             z-index: 3;
         }
 
-        /* UPDATED: Shifted up by an additional ~2 lines of spacing (-75px total) */
+        /* UPDATED: Shifted text container up 1 additional line (-95px total) */
         .hero-content {
             position: relative;
             z-index: 4;
             max-width: 800px;
-            margin-top: -75px; 
+            margin-top: -95px; 
         }
 
         .hero h1 {
             font-family: 'Lynda Cursive', 'Dancing Script', 'Lucida Handwriting', cursive;
             font-size: clamp(2.5rem, 6vw, 4.2rem); 
-            margin-bottom: 25px; 
+            margin-bottom: 0; /* Cleared default bottom margin to control via button spacing */
             color: #e0c097;
             font-weight: 700;
             text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9), 0 0 20px rgba(23, 45, 33, 0.8); 
@@ -245,7 +245,9 @@
             margin-bottom: 5px;
         }
 
+        /* UPDATED: Added top margin pushing the gallery button down 2 additional lines */
         .btn {
+            margin-top: 45px; 
             padding: 12px 30px;
             background: #e0c097;
             color: #172d21;
@@ -302,8 +304,9 @@
             }
             nav ul li { margin: 0 10px; }
             .hero { height: 55vh; min-height: 380px; padding: 10px 20px 50px; }
-            /* UPDATED: Adjusted mobile offset layout proportionally */
-            .hero-content { margin-top: -45px; }
+            /* UPDATED: Shuffled mobile text layer upward proportionally */
+            .hero-content { margin-top: -65px; }
+            .btn { margin-top: 35px; }
             .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
             
             /* SWAPS TO MOBILE IMAGE VIA CONTENT INJECTION WORKAROUND */
