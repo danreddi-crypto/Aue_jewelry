@@ -78,12 +78,12 @@
 
         nav ul li a:hover { color: #e0c097; }
 
-        /* RESPONSIVE HERO BANNER WITH OPTIMIZED VERTICAL SPACING */
+        /* FIXED RESPONSIVE HERO BANNER */
         .hero {
             position: relative;
             height: auto;
             min-height: 400px;
-            padding: 20px 20px 100px; 
+            padding: 60px 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -91,7 +91,7 @@
             text-align: center;
             overflow: hidden;
             color: white;
-            background-color: #13251c; 
+            background-color: #13251c; /* Deep dark backing for image borders */
         }
 
         /* Blurred background effect to fill out wider screens nicely */
@@ -106,7 +106,7 @@
             z-index: 1;
         }
 
-        /* Desktop view image settings */
+        /* Desktop view: default sizing using content asset container rules */
         .hero-bg-img {
             position: absolute;
             top: 0;
@@ -125,26 +125,29 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(19, 37, 28, 0.35); 
+            background: rgba(19, 37, 28, 0.35); /* Subtle dark tint over the image center */
             z-index: 3;
         }
 
-        /* UPDATED: Shifted text container up 1 additional line (-95px total) */
         .hero-content {
             position: relative;
             z-index: 4;
-            max-width: 800px;
-            margin-top: -95px; 
+            max-width: 600px;
         }
 
         .hero h1 {
             font-family: 'Lynda Cursive', 'Dancing Script', 'Lucida Handwriting', cursive;
-            font-size: clamp(2.5rem, 6vw, 4.2rem); 
-            margin-bottom: 0; /* Cleared default bottom margin to control via button spacing */
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 10px;
             color: #e0c097;
             font-weight: 700;
             text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9), 0 0 20px rgba(23, 45, 33, 0.8); 
-            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.9);
+            margin-bottom: 20px;
         }
 
         .section-padding { padding: 80px 5%; text-align: center; }
@@ -245,9 +248,7 @@
             margin-bottom: 5px;
         }
 
-        /* UPDATED: Added top margin pushing the gallery button down 2 additional lines */
         .btn {
-            margin-top: 45px; 
             padding: 12px 30px;
             background: #e0c097;
             color: #172d21;
@@ -293,6 +294,7 @@
 
         /* ADAPTIVE LAYOUT UPDATES FOR PHONES / TABLETS */
         @media (max-width: 768px) {
+            /* UPDATED: Centers the entire logo block and centers menu navigation layout items on phones */
             nav { 
                 flex-direction: column; 
                 gap: 15px; 
@@ -303,10 +305,7 @@
                 align-items: center;
             }
             nav ul li { margin: 0 10px; }
-            .hero { height: 55vh; min-height: 380px; padding: 10px 20px 50px; }
-            /* UPDATED: Shuffled mobile text layer upward proportionally */
-            .hero-content { margin-top: -65px; }
-            .btn { margin-top: 35px; }
+            .hero { height: 55vh; min-height: 380px; padding: 20px; }
             .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
             
             /* SWAPS TO MOBILE IMAGE VIA CONTENT INJECTION WORKAROUND */
@@ -316,7 +315,7 @@
         }
         
         @media (min-width: 1200px) {
-            .hero { height: 55vh; } 
+            .hero { height: 55vh; } /* Stabilizes desktop proportions perfectly */
         }
 
         footer {
@@ -354,6 +353,7 @@
         
         <div class="hero-content">
             <h1>Handcrafted Artistry</h1>
+            <p>Unique handcrafted jewelry.</p>
             <a href="#gallery" class="btn">The Gallery</a>
         </div>
     </section>
